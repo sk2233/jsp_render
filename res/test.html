@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<!-- 导包指令 单独收集 没必要按顺序 -->
+<%@ import "strconv" %>
+<!-- 会放在主函数外面的 单独收集 没必要按顺序 -->
+<%!
+var name = "2233"
+var age = 1234
+%>
+<!-- 放在主函数里面的 out 隐式对象 必须按顺序来 -->
+<% out.WriteString("你好") %>
+<!-- 打印输出的 必须按顺序来 -->
+<%= name %>
+<%= strconv.Itoa(2233) %>
+<%
+var names =[]string{"2233","4455"}
+for _,item := range names {
+%>
+<h1><%= item %></h1>
+<%
+}
+%>
+</body>
+</html>
